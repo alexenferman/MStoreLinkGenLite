@@ -3,7 +3,7 @@ A very lite website that gets .appx links for microsoft store apps
 **Cannot be used to pirate apps!**  
  
 How to use:
-https://[MStoreLinkGenLiteURL][?][Url-of-an-app] 
+https:// [MStoreLinkGenLiteURL] [?] [Url-of-an-app] 
 example: `https://storegenerator.com?https://www.microsoft.com/en-us/p/creator/app`
 
 [Visit the website project](https://alexenferman.github.io/MStoreLinkGen/main/index.html)
