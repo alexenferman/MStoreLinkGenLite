@@ -1,0 +1,149 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Mirrored from store.rg-adguard.net/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 19 Aug 2020 22:41:50 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+	<title>Microsoft Store Link Generator by Alexenferman</title>
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="css/loader.css">
+	<meta charset="utf-8">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="stylesheet" href="./css/material.min.css" /> 
+    <script defer src="./js/material.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:title" content="Microsoft Store Link Generator">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="img/box.png">
+<style>
+
+a {
+	color: rgba(0,0,0,.54);
+	font-weight: 600;
+	text-decoration:none;
+}
+
+p {
+font-size: 14px
+}
+
+td {
+color: rgba(0,0,0,.54);
+padding: 10px
+}
+
+tbody tr:nth-child(even) th {
+background: white;
+font-size: 12px;
+}
+
+    tbody tr:nth-child(even) td,
+    tbody tr:nth-child(even) tr
+    {
+        background: #fff;
+    }
+</style>
+</head>
+<body>
+	<div class="mdl-layout mdl-js-layout">
+ 
+<main class="mdl-layout__content">
+	<div class="page-content"><!-- Your content goes here -->
+	<center>
+	<div style="max-width: 1500px;">
+	<div>		
+        <input name="lang" id="lang" type="hidden" value="en"/>
+        <p>
+            <div id="selectBoxInfo" disabled="disabled"></div>
+        </p>
+    </div>
+	
+	<div id="demo-toast-example" class="mdl-js-snackbar mdl-snackbar">
+		<div class="mdl-snackbar__text"></div>
+		<button class="mdl-snackbar__action" type="button"></button>
+	</div>
+	
+	<div style="display: none;" id="p2" class="mdl-progress mdl-js-progress mdl-progress__indeterminate"></div>
+	
+	</center>
+	<script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/jquery.js"></script>
+	
+	<script type="text/javascript">
+	
+    function getXmlHttp() {
+        var xmlhttp;
+        try {
+            xmlhttp = new ActiveXObject("Msxml2.XMLHTTP");
+        } catch (e) {
+            try {
+                xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+            } catch (E) {
+                xmlhttp = false;
+            }
+        }
+        if (!xmlhttp && typeof XMLHttpRequest!='undefined') {
+            xmlhttp = new XMLHttpRequest();
+        }
+        return xmlhttp;
+    }
+    window.onload = function() {
+	    const queryString = window.location.search;
+		console.log(queryString);
+		newString = queryString
+		newString = newString.slice(1);
+		
+		console.log(newString);
+        var xmlhttp = getXmlHttp();
+        document.getElementById("p2").style.display = "block";
+		document.getElementById("selectBoxInfo").style.display = "none";
+        xmlhttp.open('POST', 'https://cors-anywhere.herokuapp.com/https://store.rg-adguard.net/api/GetFiles', true);
+        xmlhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        xmlhttp.send("type=url&url=" + newString + "&ring=RP&lang=en-US");
+        xmlhttp.onreadystatechange = function() {
+            if (xmlhttp.readyState == 4) {
+                if(xmlhttp.status == 200) {
+			$('#selectBoxInfo').html(xmlhttp.responseText);
+			
+			   
+			    var notification = document.querySelector('.mdl-js-snackbar');
+				notification.MaterialSnackbar.showSnackbar(
+				{message: 'Done'});
+				document.getElementById("p2").style.display = "none";
+				document.getElementById("selectBoxInfo").style.display = "block";
+               
+                }
+            }
+        };
+    }
+    $(function(){
+        $('#type').change(function(){
+            var type = $('#type :selected').val();
+            var title_text = 'Sample Data: ';
+            if (type == 'url') {
+                $("#url").attr('placeholder', title_text + 'https://www.microsoft.com/store/productId/9NSWSBXN8K03');
+            }
+            if (type == 'ProductId') {
+                $("#url").attr('placeholder', title_text + '9NKSQGP7F2NH');
+            }
+            if (type == 'PackageFamilyName') {
+                $("#url").attr('placeholder', title_text + 'Microsoft.WindowsStore_8wekyb3d8bbwe');
+            }
+            if (type == 'CategoryId') {
+                $("#url").attr('placeholder', title_text + 'd58c3a5f-ca63-4435-842c-7814b5ff91b7');
+            }
+        })
+    });
+
+function showbar() {	
+  var notification = document.querySelector('.mdl-js-snackbar');
+notification.MaterialSnackbar.showSnackbar(
+  {message: 'Image Uploaded'});
+}
+  </script>
+  </div>
+  </div>
+  </main>
+</div>
+</body>	

@@ -1,0 +1,72 @@
+body {
+    display:block;
+    border: 0px;
+    background-size: cover;
+    background-attachment:fixed;
+}
+
+a {
+	color: rgb(33,150,243);
+	font-weight: bold;
+}
+
+.center {
+    position: absolute;
+    top: 10%;
+    margin-top: -0.625em;
+    display: inline-block;
+    vertical-align: middle;
+    width: 99%;
+    text-align: center;
+    color: oldlace;
+}
+
+#footer {
+    position: fixed;
+    left: 0; bottom: 0;
+    padding: 0px;
+    color: blue;
+    width: 100%;
+   }
+
+.tftable {
+	border-collapse: collapse;
+	box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12);
+    font-size:12px;
+    color:#333333;
+    width:98%;
+	border: 1px solid rgba(0,0,0,.12);
+}
+
+th {
+	font-size: 12px;
+}
+
+.tftable th {
+	font-size: 12px;
+	border: 0px solid;
+	border-bottom: 1px solid;
+	font-weight: 700;
+    font-size:16px;
+	color: #757575;
+    padding: 10px;
+    text-align:left;
+	border-color: rgba(0,0,0,.12);
+}
+
+.tftable td {
+	border: 0px solid;
+    font-size:14px;
+    border-bottom: 1px solid;
+    border-color: rgba(0,0,0,.12);
+	transition: 0.3s;
+}
+
+.tftable td:hover {
+	transition: 0.3s;
+	background-color: rgba(0,0,0,.12);
+	border: 0px solid;
+    font-size:14px;
+    border-bottom: 1px solid;
+    border-color: rgba(0,0,0,.12);
+}
