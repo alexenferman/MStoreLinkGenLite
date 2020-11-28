@@ -8,7 +8,7 @@ https:// [MStoreLinkGenLiteURL] [?] [Url-of-an-app]
 
 example: `https://storegenerator.com?https://www.microsoft.com/en-us/p/creator/app`
 
-[Visit the website project](https://alexenferman.github.io/MStoreLinkGen/main/index.html)
+[Visit the website project](https://alexenferman.github.io/MStoreLinkGenLite/main/index.html)
   
 Using the store.rg-adguard.net API  
 ```HTML
