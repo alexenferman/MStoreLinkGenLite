@@ -98,7 +98,7 @@ font-size: 12px;
         var xmlhttp = getXmlHttp();
         document.getElementById("p2").style.display = "block";
 		document.getElementById("selectBoxInfo").style.display = "none";
-        xmlhttp.open('POST', 'https://cors-anywhere.herokuapp.com/https://store.rg-adguard.net/api/GetFiles', true);
+        xmlhttp.open('POST', 'https://cors.bridged.cc/https://store.rg-adguard.net/api/GetFiles', true);
         xmlhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
         xmlhttp.send("type=url&url=" + newString + "&ring=RP&lang=en-US");
         xmlhttp.onreadystatechange = function() {
