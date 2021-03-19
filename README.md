@@ -19,6 +19,6 @@ xmlhttp.send("type=url&url=" + document.getElementById("url").value + "&ring=RP&
 
 ## Relies on  
 `store.rg-adguard.net API`: Fetches html content for a given link.  
-`cors-anywhere.herokuapp.com`: Used to make CORS request to the store "api" Editable.  
+`cors.bridged.cc`: Used to make CORS request to the store API.  
 `Material Design Lite [MDL]`: Lightweight Material Design framework
   
